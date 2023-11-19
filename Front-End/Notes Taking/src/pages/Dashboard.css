@@ -1,0 +1,29 @@
+.card{
+    width: 18rem;
+    padding: 10px;
+    margin: 10px;
+    height: 12rem;
+    overflow-y: scroll;
+}
+.card-box{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.title{
+    background-color: gray;
+    color: aliceblue;
+    text-align: center;
+}
+.remove-button, .delete-button{
+    width: 100px;
+}
+.button-container{
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+.name{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+}

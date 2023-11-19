@@ -1,0 +1,27 @@
+.input{
+  width: 40%;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(250, 249, 249);
+}
+@media only screen and (max-width: 650px) {
+  .input{
+    width: 60%;
+  }
+}
+.button{
+  background-color: transparent;
+  border: none;
+  color: #0000FF;
+}
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
