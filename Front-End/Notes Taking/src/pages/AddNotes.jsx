@@ -29,6 +29,14 @@ function AddNotes() {
     } else {
       setResponse(data.message)
     }
+
+    useEffect(() => {
+      const ticket = localStorage.getItem('token')
+      if (!ticket) {
+        navigate('/login')
+      }
+    }, [])
+
   }
   return (
     <Base>
