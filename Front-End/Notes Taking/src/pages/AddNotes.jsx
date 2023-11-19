@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import Base from './Base'
 import { Button, FloatingLabel, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
@@ -29,13 +29,6 @@ function AddNotes() {
     } else {
       setResponse(data.message)
     }
-
-    useEffect(() => {
-      const ticket = localStorage.getItem('token')
-      if (!ticket) {
-        navigate('/login')
-      }
-    }, [])
 
   }
   return (
