@@ -29,7 +29,7 @@ const EditNotes=({userNote, setUserNote})=> {
         title,
         notes:content,
       })
-      const res= await fetch(`http://localhost:3000/api/notes/update/${id}`,{
+      const res= await fetch(`https://notestaking-backend.onrender.com/api/notes/update/${id}`,{
         method: 'PUT',
         body: JSON.stringify(note),
         headers:{
