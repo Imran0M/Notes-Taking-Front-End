@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import Card from 'react-bootstrap/Card';
 import Base from './Base'
 import './Dashboard.css'
-import { Button, Container } from 'react-bootstrap';
+import { Button, Row } from 'react-bootstrap';
 import { useNavigate} from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 
@@ -21,13 +21,13 @@ function Dashboard({userNote, setUserNote}) {
         }
       })
       const data = await res.json()
-      console.log(data)
+      // console.log(data)
       if (data.error) {
         setErr(data.error)
       }else{
         setUserNote(data.data)
         setAccountName(data.data[0].user.username)
-        console.log(data.data[0].user.username)
+        // console.log(data.data[0].user.username)
       }
     }
     fetchData()
@@ -35,8 +35,8 @@ function Dashboard({userNote, setUserNote}) {
       if (!ticket) {
         navigate('/login')
       }
-  }, [])
-console.log(err)
+  }, [accountName])
+// console.log(err)
   const handleDelete= async(id)=>{
       const res = await fetch(`https://notestaking-backend.onrender.com/api/notes/delete/${id}`,{
         method:'DELETE',
@@ -55,25 +55,27 @@ console.log(err)
   
   return (
     <Base accountName={accountName} >
-    {err ? <p className='center'>{err}</p> : ''}
-    <p className='name'>Welcome { accountName}!</p>
+      {err ? <p className='center'>{err}</p> : ''}
     {userNote &&
-    <Container>
+    <div  className='dash-bg'>
+       <h3 className='name'>Welcome { accountName}!</h3>
     <div className='card-box'>{userNote.map((i)=>(
       <Card className='card' key={i._id}>
-        <Card.Title className='title'>Title: {i.title}</Card.Title>
-        <p>Note: {i.notes}</p>
-        <p>Due Date: {i.date}</p>
+        <Row ><p className='date'>created by : { i.date}</p></Row>
+        <Row><h4 className='title-heading'>Title</h4></Row>
+        <Row><p className='title-value'>{i.title}</p></Row>
+        <Row><h4 className='title-heading'>Notes</h4></Row>
+        <Row><p>{i.notes}</p></Row>
         <div className='button-container'>
         <Button  className='remove-button' onClick={()=>handleDelete(i._id)}  variant="light">Remove</Button>
         <Button className='delete-button' onClick={() =>navigate(`/editnotes/${i._id}`) } variant="dark">Update</Button>
         </div>
       </Card>
     ))}</div>
-    </Container>}
+    </div>}
     <ToastContainer/>
     </Base>
   )
 }
 
-export default Dashboard
+export default Dashboard;

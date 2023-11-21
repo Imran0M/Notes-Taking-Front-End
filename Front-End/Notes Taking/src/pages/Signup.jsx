@@ -2,19 +2,15 @@ import { useEffect, useState } from 'react'
 import { Button, Col, Row } from 'react-bootstrap';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
-import { Navigate, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import notesTaking from '../assets/no-projects.png';
 import { toast, ToastContainer } from 'react-toastify';
-
-
 
 function Signup() {
   const navigate = useNavigate()
   const [username, setUserName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [err, setErr] = useState('')
-  const [response, setResponse] = useState('')
 
   const handleSignUp = async () => {
     const payload = ({
@@ -41,17 +37,13 @@ function Signup() {
     setEmail('')
     setPassword('')
   }
-
-
   return (
-    <div>
       <Row>
         <Col> <div className='bg'>
+        <h2 className='brand-two'>DIGI Notes</h2>
           <img className="notes-taking_image" src={notesTaking} alt="notes" />
         </div> </Col>
         <Col><div className='form'>
-          {err ? <p className='danger'>{err}</p> : ''}
-          {response ? <p className='danger'>{response}</p> : ''}
           <h3>Sign Up</h3>
           <FloatingLabel
             controlId="floatingname"
@@ -74,15 +66,8 @@ function Signup() {
           <p>Already have an account?<button className='button' onClick={() => { navigate('/login') }}>Login</button> </p>
         </div></Col>
         <ToastContainer/>
-      </Row>
-
-
-
-
-    </div>
+    </Row>
 
   )
 }
-
-
 export default Signup

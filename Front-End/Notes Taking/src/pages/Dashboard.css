@@ -2,18 +2,14 @@
     width: 18rem;
     padding: 10px;
     margin: 10px;
-    height: 12rem;
-    overflow-y: scroll;
+    background-color: #d4d0d0;
+    border: none;
+  
 }
 .card-box{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-.title{
-    background-color: gray;
-    color: aliceblue;
-    text-align: center;
 }
 .remove-button, .delete-button{
     width: 100px;
@@ -26,4 +22,22 @@
 .name{
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+    padding-top: 15px;
 }
+
+.date{
+    text-align: end;
+    font-size: 10px;
+}
+.title-heading{
+    font-weight: bold;
+}
+.title-value{
+    font-family: 'Courier New', Courier, monospace;
+}
+.brand{
+    font-family: 'Kanit', sans-serif;
+}
+
+
+

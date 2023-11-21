@@ -6,11 +6,13 @@
   background-color: black;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 3rem;
 }
 .input{
-  width: 70%;
+  width: 60%;
 }
 .form{
   display: flex;
@@ -24,6 +26,7 @@
     width: 60%;
   }
 }
+
 .button{
   background-color: transparent;
   border: none;
@@ -35,11 +38,16 @@
   align-items: center;
   height: 100vh;
 }
-.e-message{
-  background-color: rgba(247, 243, 243, 0.444);
-  color: rgb(29, 30, 30);
-  border-radius: 5px;
-  border: 0 2px 0 0 solid white;
- padding: 10px;
- text-align: end;
+
+.button-btn{
+   width: 150px 
+}
+
+.row{
+  --bs-gutter-x: 0;
+   --bs-gutter-y: 0; 
+}
+.brand-two{
+  font-family: 'Kanit', sans-serif;
+  color: aliceblue;
 }

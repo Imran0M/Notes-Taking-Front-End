@@ -17,7 +17,7 @@ function Base({ children , title, accountName}) {
       {['sm'].map((expand) => (
         <Navbar key={expand} expand={expand}  className="bg-body-secondary ">
           <Container fluid>
-            <Navbar.Brand href="#">Notes Taking </Navbar.Brand>
+            <Navbar.Brand className='brand'>DiGi NOTES</Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
