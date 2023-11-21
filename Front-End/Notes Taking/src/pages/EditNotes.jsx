@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Base from './Base'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Button, FloatingLabel, Form } from 'react-bootstrap'
 
 const EditNotes=({userNote, setUserNote})=> {
@@ -8,6 +8,7 @@ const EditNotes=({userNote, setUserNote})=> {
     const [content, setContent]= useState('')
     const [err, setErr]= useState('')
     const [response, setResponse]= useState('')
+    const navigate= useNavigate()
     const {id}= useParams()
 
     useEffect(()=>{
@@ -43,10 +44,10 @@ const EditNotes=({userNote, setUserNote})=> {
       userNote[editableNotes]= data.data;
       await setUserNote([...userNote]);
      }else{
-      setErr(data.error)
-      setResponse(data.message)
+      setErr(data.data.error)
+      setResponse(data.data.message)
      }
-  
+     navigate('/dashboard')
     }
     return (
       <Base>

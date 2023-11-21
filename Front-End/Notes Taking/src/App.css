@@ -1,5 +1,16 @@
+
+.notes-taking_image{
+  width: 300px;
+}
+.bg{
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .input{
-  width: 40%;
+  width: 70%;
 }
 .form{
   display: flex;
@@ -7,7 +18,6 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: rgb(250, 249, 249);
 }
 @media only screen and (max-width: 650px) {
   .input{
@@ -24,4 +34,12 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+}
+.e-message{
+  background-color: rgba(247, 243, 243, 0.444);
+  color: rgb(29, 30, 30);
+  border-radius: 5px;
+  border: 0 2px 0 0 solid white;
+ padding: 10px;
+ text-align: end;
 }

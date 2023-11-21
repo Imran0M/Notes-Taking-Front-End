@@ -7,6 +7,7 @@ import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
 import AddNotes from './pages/AddNotes'
 import EditNotes from './pages/EditNotes'
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [userNote, setUserNote] = useState('')

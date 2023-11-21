@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Base from './Base'
 import { Button, FloatingLabel, Form } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify';
 
 function AddNotes() {
   const [title, setTitle] = useState('')
@@ -25,9 +26,9 @@ function AddNotes() {
     })
     const data = await res.json()
     if (data.error) {
-      setErr(data.error)
+      toast.error("Please Add Note")
     } else {
-      setResponse(data.message)
+      toast.success(data.message)
     }
 
   }
@@ -47,7 +48,7 @@ function AddNotes() {
           <Form.Control type="text" as="textarea" required placeholder="Your Notes" onChange={(e) => { setContent(e.target.value) }} value={content} />
         </FloatingLabel>
         <Button onClick={addNotes} variant="dark">Add Notes</Button>
-
+        <ToastContainer/>
       </div>
     </Base>
   )

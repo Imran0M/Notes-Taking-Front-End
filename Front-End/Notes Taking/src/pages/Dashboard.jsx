@@ -4,6 +4,8 @@ import Base from './Base'
 import './Dashboard.css'
 import { Button, Container } from 'react-bootstrap';
 import { useNavigate} from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
+
 
 function Dashboard({userNote, setUserNote}) {
   const navigate= useNavigate()
@@ -46,6 +48,9 @@ console.log(err)
       const data = await res.json()
       const newUserData = userNote.filter((data)=> data._id != id)
       setUserNote(newUserData)
+      if(data.messaage){
+        toast.success(data.messaage)
+      }
   }
   
   return (
@@ -66,6 +71,7 @@ console.log(err)
       </Card>
     ))}</div>
     </Container>}
+    <ToastContainer/>
     </Base>
   )
 }
