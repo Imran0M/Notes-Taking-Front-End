@@ -76,7 +76,7 @@ function Login() {
                 value={password} />
             </FloatingLabel>
             <Button  className='button-btn' onClick={handleLogin} variant="dark">Login</Button>
-            <p>Register you don't have account<button className='button' onClick={() => { navigate('/') }}>Sign Up</button> </p>
+            <p>Register you don't have account <button className='button' onClick={() => { navigate('/') }}>Sign Up</button> </p>
           </div>
         </Col>
         <ToastContainer />

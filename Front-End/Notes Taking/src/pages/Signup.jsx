@@ -62,8 +62,8 @@ function Signup() {
           <FloatingLabel controlId="floatingPassword" label="Password" className="mb-3 input">
             <Form.Control type="password" placeholder="Password" value={password} onChange={(e) => { setPassword(e.target.value) }} />
           </FloatingLabel>
-          <Button onClick={handleSignUp} variant="dark">Signup</Button>
-          <p>Already have an account?<button className='button' onClick={() => { navigate('/login') }}>Login</button> </p>
+          <Button className='button-btn' onClick={handleSignUp} variant="dark">Signup</Button>
+          <p>Already have an account? <button className='button' onClick={() => { navigate('/login') }}>Login</button> </p>
         </div></Col>
         <ToastContainer/>
     </Row>

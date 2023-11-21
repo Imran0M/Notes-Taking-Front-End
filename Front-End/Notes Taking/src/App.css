@@ -40,7 +40,8 @@
 }
 
 .button-btn{
-   width: 150px 
+   width: 150px;
+   margin-bottom: 5px;
 }
 
 .row{
